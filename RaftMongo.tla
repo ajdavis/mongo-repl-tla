@@ -265,9 +265,9 @@ Next ==
     \/ ClientWriteAction
     \*
     \* --- Commit point learning protocol
-    \/ AdvanceCommitPoint
+   \* \/ AdvanceCommitPoint
     \* \/ LearnCommitPointAction
-    \/ LearnCommitPointFromSyncSourceAction
+   \* \/ LearnCommitPointFromSyncSourceAction
     \* \/ AppendEntryAndLearnCommitPointFromSyncSourceAction
     \* \/ LearnCommitPointWithTermCheckAction
     \* \/ LearnCommitPointFromSyncSourceNeverBeyondLastAppliedAction
@@ -289,6 +289,6 @@ Liveness ==
 
 \* The specification must start with the initial state and transition according
 \* to Next.
-Spec == Init /\ [][Next]_vars /\ Liveness
+Spec == Init /\ [][Next]_vars \* /\ Liveness
 
 ===============================================================================
